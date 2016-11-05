@@ -1,0 +1,28 @@
+{
+    // Book info
+    "title": "Rooted",
+    "author": "Dan Byrne",
+    "publish_date": "2013",
+    // Content
+    "chapters": [
+        [
+            {
+                "title": "Introduction: Ready to Explore?",
+                "type": "text",
+                "text": "lorem ipsum"
+            }
+        ],
+        [
+            {
+                "title": "John 1:1-18",
+                "type": "text",
+                "text": "lorem ipsum"
+            },
+            {
+                "title": "Guidepost #1",
+                "type": "text",
+                "text": "lorem ipsum"
+            }
+        ]
+    ],
+}
