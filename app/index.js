@@ -1,7 +1,7 @@
 /**
  * RootedApp
- * https://github.com/facebook/react-native
- * @flow
+ * https://github.com/jaydenwindle/echacks-2016 
+ * Created by @jaydenwindle
  */
 
 import React, { Component } from 'react';
