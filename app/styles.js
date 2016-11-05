@@ -1,16 +1,16 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
+    header: {
+        backgroundColor: '#9BBB59',
+    },
+    con: {
+        padding: 20,
+    },
+    checkcircle_icon: {
+        borderWidth: 2,
+        paddingRight: 6,
+        paddingLeft: 10,
+    }
 });
 

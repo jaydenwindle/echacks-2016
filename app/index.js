@@ -6,20 +6,33 @@
 
 import React, { Component } from 'react';
 import {
-    Text,
-    View
+    Navigator
 } from 'react-native';
+
 import { styles } from './styles';
+import { Contents } from './scenes/contents.js';
+import { Reader } from './scenes/reader.js';
+
+var book = require('../assets/rooted.json');;
+
+
 
 export default class rootedapp extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to RootedApp!
-        </Text>
-      </View>
-    );
-  }
+    render() {
+        return (
+            <Navigator
+                style={{ flex:1 }}
+                initialRoute={{ name: 'Contents' }}
+                renderScene={ this.renderScene } />
+           );
+    }
+    renderScene(route, navigator) {
+        if (route.name == 'Contents') {
+            return <Contents navigator={navigator} book={book}/>
+        }
+        if (route.name == 'Reader') {
+            return <Reader navigator={navigator} book={book} chapter={1} />
+        }
+    }
 }
 

@@ -23,6 +23,18 @@
                 "type": "text",
                 "text": "lorem ipsum"
             }
+        ],
+        [
+            {
+                "title": "John 2:1-18",
+                "type": "text",
+                "text": "lorem ipsum"
+            },
+            {
+                "title": "Guidepost #2",
+                "type": "text",
+                "text": "lorem ipsum"
+            }
         ]
     ],
 }
