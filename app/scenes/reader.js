@@ -1,6 +1,7 @@
 import React, { Component, } from 'react';
 import {
     Text,
+    View
 } from 'react-native';
 import {
     Container,
@@ -18,22 +19,9 @@ import { styles } from '../styles';
 export class Reader extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            chapter: this.props.chapter,
-            section1: {
-                title: this.props.book.chapters[this.props.chapter][0].title,
-                type: this.props.book.chapters[this.props.chapter][0].type,
-                text: this.props.book.chapters[this.props.chapter][0].text,
-            },
-            section2: {
-                title: this.props.book.chapters[this.props.chapter][1].title,
-                type: this.props.book.chapters[this.props.chapter][1].type,
-                text: this.props.book.chapters[this.props.chapter][1].text,
-            }
-        }
     }
     render() {
-        console.log(this.state);
+        var obj = this.props.book.chapters[this.props.chapter];
         return (
             <Container> 
                 <Header style={styles.header}>
@@ -44,26 +32,36 @@ export class Reader extends Component {
                 </Header>
 
                 <Content>
+                    {obj[1] !== undefined ? 
                     <Tabs>
                         <Content
                             style={styles.con} 
-                            tabLabel={this.state.section1.title}>
+                            tabLabel={obj[0].title}>
                             <Text>
-                                {this.state.section1.text}
+                                {obj[0].text}
                             </Text>
                         </Content>
                         <Content 
                             style={styles.con}
-                            tabLabel={this.state.section2.title}>
+                            tabLabel={obj[1].title}>
                             <Text>
-                                {this.state.section2.text}
+                                {obj[1].text}
                             </Text>
                         </Content>
                     </Tabs>
-                    <Button 
-                        block
-                        onPress={() => this._next()}
-                        style={{margin: 20}}>Next</Button>
+                    : 
+                    <View style={styles.con}>
+                        <Text style={[styles.h1, {textAlign: 'left'}]}>{obj[0].title}</Text>
+                        <Text>
+                            {obj[0].text}
+                        </Text>
+                    </View>}
+                    <View style={styles.con}>
+                        <Button 
+                            block
+                            onPress={() => this._next()}
+                            >Next</Button>
+                    </View>
                 </Content>
             </Container>
            );
